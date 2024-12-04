@@ -1,0 +1,194 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "fira code";
+  user-select: none;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(214, 231, 214);
+}
+
+.panel {
+  width: 80%;
+  height: 80%;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 1px 5px 10px black;
+}
+
+.paneltop {
+  padding: 0 25%;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  background-color: rgb(153, 208, 153);
+}
+
+.elem {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding-right: 50px;
+  gap: 20px;
+  border-right: 2px solid #fff;
+  cursor: default;
+}
+
+.elem:nth-last-child(1) {
+  border-right: none;
+}
+
+h4 {
+  font-size: large;
+}
+
+.box {
+  padding: 10px;
+  border-radius: 5px;
+  color: coral;
+  font-size: 25px;
+  font-weight: 600;
+  background-color: white;
+}
+
+.panelbottom {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  width: 100%;
+  gap: 10px;
+  height: calc(100% - 100px);
+  background-color: white;
+}
+
+.bubble {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: rgb(48, 136, 89);
+  cursor: pointer;
+  transition: all ease 0.25s;
+  animation: bubbleanim 0.5s linear;
+}
+
+.bubble h2 {
+  transition: all ease 0.25s;
+}
+
+.bubble:hover {
+  background-color: rgb(45, 110, 35);
+  scale: 1.1;
+  box-shadow: 1px 2px 5px gray;
+}
+
+.bubble:active {
+  background-color: rgb(45, 110, 35);
+  scale: 0.9;
+  box-shadow: 1px 2px 5px gray;
+}
+
+.bubble:hover > h2 {
+  font-weight: 500;
+  scale: 1.1;
+  color: coral;
+}
+
+.bubble h2 {
+  font-weight: 400;
+}
+
+h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+span {
+  color: coral;
+  user-select: all;
+}
+
+::selection {
+  background-color: rgb(153, 208, 153);
+  color: coral;
+}
+
+button {
+  position: absolute;
+  height: 7%;
+  width: 10%;
+  top: 60%;
+  left: 50%;
+  transform: translate(-60%, -50%);
+  background-color: rgb(48, 136, 89);
+  color: #fff;
+  font-weight: 500;
+  border-radius: 5px;
+  border: 1px solid black;
+  box-shadow: 1px 2px 5px gray;
+}
+
+@keyframes bubbleanim {
+  from {
+    scale: 1.1;
+  }
+  to {
+    gap: 10px;
+    scale: 1;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .panel {
+    width: 90%;
+    height: 92%;
+  }
+
+  .paneltop {
+    padding: 0 5%;
+  }
+
+  .panelbottom {
+    gap: 13px;
+  }
+
+  .elem {
+    gap: 10px;
+    padding-right: 5px;
+  }
+
+  .bubble {
+    height: 45px;
+    width: 45px;
+  }
+
+  h1 {
+    font-size: larger;
+  }
+
+  button {
+    width: 20%;
+  }
+}
